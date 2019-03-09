@@ -13,6 +13,18 @@ export const cupcakeBase = {
   address: '4e0ed006-4fe0-46e3-9a05-c928640a4e05',
 };
 
+export const patientRecordBase = {
+  id: null,
+  name: 'Chocolate',
+  height: 1.9,
+  weight: 75,
+  prescriptions: {
+    []
+  },
+  notes: "Healthy",
+  address: '4e0ed006-4fe0-46e3-9a05-c928640a4e05',
+};
+
 export const flavourColours = { Chocolate: '#FF0000', Vanilla: '#FFFFBB' };
 
 export const icingColours = { Chocolate: '#FF0000', Vanilla: '#FFFFBB' };
