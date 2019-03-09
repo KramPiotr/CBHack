@@ -1,0 +1,29 @@
+<html>
+
+<head> <title> "Transaction" </title>
+
+<body> 
+	<form> 
+		Sender: <input id = "sender" type = "text"> <br> 
+		Recipient: <input id = "recipient" type = "text"> <br>
+		File Id: <input id = "file" type = "text">
+	</form>
+
+	<button>Transfer</button>
+</body>
+
+<script>
+
+var buttonElement = document.body.getElementsByTagName("button")[0];
+
+buttonElement.addEventListener("click",function(){
+	var x = document.getElementById("sender").value;
+	var y = document.getElementById("recipient").value;
+	var z = document.getElementById("file").value;
+	console.log(x);
+	console.log(y);
+	console.log(z);
+})
+</script>
+
+</html>
