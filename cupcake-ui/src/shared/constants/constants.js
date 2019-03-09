@@ -18,9 +18,7 @@ export const patientRecordBase = {
   name: 'Chocolate',
   height: 1.9,
   weight: 75,
-  prescriptions: {
-    []
-  },
+  prescriptions: {},
   notes: "Healthy",
   address: '4e0ed006-4fe0-46e3-9a05-c928640a4e05',
 };
