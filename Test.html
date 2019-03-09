@@ -12,17 +12,27 @@
 	<button>Transfer</button>
 </body>
 
-<script src = "https://api.todaqfinance.net/transactions">
+<script>
 
 var buttonElement = document.body.getElementsByTagName("button")[0];
+
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
 
 buttonElement.addEventListener("click",function(){
 	var x = document.getElementById("sender").value;
 	var y = document.getElementById("recipient").value;
 	var z = document.getElementById("file").value;
 	
-	var https = require('https');
-
+	const Https = new XMLHttpRequest("https://api.todaqfinance.net/transactions");
+	
+	var https = httpGet("https://api.todaqfinance.net/transactions");
+	
 	var options = {
 	  'method': 'POST',
 	  'hostname': 'https://api.todaqfinance.net',
