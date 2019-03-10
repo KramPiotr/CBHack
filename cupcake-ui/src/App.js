@@ -9,7 +9,7 @@ class App extends Component {
         sender: 'a2102dce-dcf2-43e1-aa8e-9b8eb07121ff',
         file: 'e124eb86ff56fd6c2693bc0cbc529ddb88216d60130d8f305eb87f44fd9b66c0',
 
-        name: 'John',
+        name: 'Alice',
         height: '185',
         weight: '75',
         prescription: 'Anti-Malatia pills (x5)',
@@ -86,7 +86,7 @@ class App extends Component {
 
                 {/*<h1> Add Notes </h1>*/}
                 {/*<br></br>*/}
-                
+
                 {/*<div>File ID: <input type="text"*/}
                                      {/*value={this.state.fileID}*/}
                                      {/*onChange={evt => this.setState({fileID: evt.target.value})}/></div>*/}
