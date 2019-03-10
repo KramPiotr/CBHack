@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class FileSender extends Component {
+class FileCreater extends Component {
 
     create(name, height, weight, prescription, notes, initialaccount) {
         var transaction = {
