@@ -21,32 +21,20 @@ const sampleAccount = {
   },
 };
 
-const patientRecord = {
-  patientName: 'John Doe',
-  height: 1.8,
-  weight: 80,
-  prescriptions: [
-    {drugName: 'Penicillin', dosage: '500mg once a day'},
-    {drugName: 'Sugar Pills', dosage: 'As many as possible'}
-  ],
-  notes: "John has recurring sore knees.";
+const sampleCupcake = {
+  flavour: 'chocolate',
+  icing: 'chocolate',
+  sprinkles: {
+    quantity: 41,
+    type: 'rainbow',
+  },
+  candle: {
+    colour: 'blue',
+    ignited: false,
+  },
 };
-
-// const sampleCupcake = {
-//   flavour: 'chocolate',
-//   icing: 'chocolate',
-//   sprinkles: {
-//     quantity: 41,
-//     type: 'rainbow',
-//   },
-//   candle: {
-//     colour: 'blue',
-//     ignited: false,
-//   },
-// };
 
 module.exports = {
   sampleAccount,
-  patientRecord,
-  // sampleCupcake,
+  sampleCupcake,
 };

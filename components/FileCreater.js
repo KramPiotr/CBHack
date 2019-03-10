@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-class FileCreater extends Component {
+class FileSender extends Component{
 
     create(name, height, weight, prescription, notes, initialaccount) {
         var transaction = {
             "data": {
-                "type": "file",
-                "attributes": {
-                    "payload": {
+                "type":"file",
+                "attributes":{
+                    "payload":{
                         'name': name,
                         'height': height,
                         'weight': weight,
@@ -15,10 +15,10 @@ class FileCreater extends Component {
                         'notes': notes
                     }
                 },
-                "relationships": {
-                    "initial-account": {
-                        "data": {
-                            "type": "account",
+                "relationships":{
+                    "initial-account":{
+                        "data":{
+                            "type":"account",
                             "id": initialaccount,
                         }
                     },
@@ -28,8 +28,7 @@ class FileCreater extends Component {
                         }
                     }
                 }
-            }
-        };
+            }};
 
         var https = require('https');
 
@@ -61,23 +60,23 @@ class FileCreater extends Component {
             });
         });
 
-        var postData = JSON.stringify(transaction);
+        var postData =  JSON.stringify(transaction);
 
         req.write(postData);
 
         req.end();
     }
 
-    render() {
-        return (
+    render(){
+        return  (
             <div className="container">
                 <button
-                    onClick={() => this.create(this.props.name, this.props.height, this.props.weight, this.props.prescription, this.props.notes, this.props.initialaccount)}
-                >Create a file
-                </button>
+                    onClick={()=>this.create(this.props.name, this.props.height, this.props.weight, this.props.prescription, this.props.notes, this.props.initialaccount)}
+                >Create a file</button>
             </div>
         );
     }
+
 }
 
 export default FileSender;
