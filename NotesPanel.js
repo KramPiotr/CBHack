@@ -6,10 +6,11 @@ class NotesPanel extends Component {
     state = {
         account: this.props.account,
         axios: require('axios'),
-        patientRecord,        
+        patientRecord, //fileId should be here,
+        value: '',
     };
-    
-    updateInfo = (data) => axios
+
+    updateInfo = (data, id) => axios
         .patch(`${process.env.API_URL}/accounts/${id}`, data, {
             headers: {
                 'Content-Type': 'application/json',
@@ -18,7 +19,7 @@ class NotesPanel extends Component {
         })
         .then(res => res.data.data)
         .catch(error => console.log(error));
-    
+
     onLoad = (evt) => {
         evt.preventDefault();
 
@@ -41,8 +42,8 @@ class NotesPanel extends Component {
                         <input type="text" value={this.state.value} onChange={}/>
                     </label>
                 </form>
-                <button type="button" className="btn btn-primary mb-2" onClick={this.onLoad}>
-                    Load
+                <button type="button" className="btn btn-primary mb-2" onClick={this.updateInfo(this.state.value, this.state.patientRecord)}>
+                    Submit
                 </button>
             </div>
         );
