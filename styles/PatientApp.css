@@ -1,8 +1,8 @@
 body {
     text-align: center;
 }
-  
-  .App-header {
+
+.App-header {
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -11,28 +11,28 @@ body {
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-  }
-  
-  .panel {
-    margin-top: 50px;
-  }
-  
-  .form-check {
-    top: 38px;
-  }
+}
 
-  .App-link {
+.panel {
+    margin-top: 50px;
+}
+
+.form-check {
+    top: 38px;
+}
+
+.App-link {
     color: #61dafb;
-  }
-  
-  h1{
+}
+
+h1{
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-  }
-  
-  
-  input[type=text]{
+}
+
+
+input[type=text]{
     text-align: center;
     width: 50%;
     padding: 12px 20px;
-  }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FileSender from './components/FileSender';
 import FileCreater from './components/FileCreater';
-import './shared/styles/App.css';
+import './styles/App.css';
 
 class App extends Component {
     state = {
