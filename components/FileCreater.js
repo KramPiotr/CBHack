@@ -2,10 +2,37 @@ import React, { Component } from 'react';
 
 class FileSender extends Component{
 
-    transfer(accountID){
-        let https = require('https');
+    create(name, height, weight, prescription, notes, initialaccount) {
+        var transaction = {
+            "data": {
+                "type":"file",
+                "attributes":{
+                    "payload":{
+                        'name': name,
+                        'height': height,
+                        'weight': weight,
+                        'prescription': prescription,
+                        'notes': notes
+                    }
+                },
+                "relationships":{
+                    "initial-account":{
+                        "data":{
+                            "type":"account",
+                            "id": initialaccount,
+                        }
+                    },
+                    "file-type": {
+                        "data": {
+                            "id": "prescription"
+                        }
+                    }
+                }
+            }};
 
-        let options = {
+        var https = require('https');
+
+        var options = {
             'method': 'POST',
             'hostname': 'api.todaqfinance.net',
             'path': '/files',
@@ -15,8 +42,9 @@ class FileSender extends Component{
             }
         };
 
-        let req = https.request(options, function (res) {
-            let chunks = [];
+
+        var req = https.request(options, function (res) {
+            var chunks = [];
 
             res.on("data", function (chunk) {
                 chunks.push(chunk);
@@ -32,21 +60,23 @@ class FileSender extends Component{
             });
         });
 
-        const postData =  "{\n    \"data\": {\n    \t\"type\":\"file\",\n    \t\"attributes\":{\n    \t\t\"payload\":{ \n\t\t\t\t \"type\": \"loyalty-token\",\n\t\t\t\t \"member-type\": \"gold\"\n    \t\t}\n    \t},\n    \t\"relationships\":{\n    \t\t\"initial-account\":{\n    \t\t\t\"data\":{\n\t    \t\t\t\"type\":\"account\",\n    \t\t\t\t\"id\":\""+accountID+"\"\n    \t\t\t}\n    \t\t},\n    \t\t\"file-type\": {\n    \t\t\t\"data\": {\n    \t\t\t\t\"id\": \"prescription\"\n    \t\t\t}\n    \t\t}\n    \t}\n    }\n}";
+        var postData =  JSON.stringify(transaction);
 
         req.write(postData);
 
         req.end();
     }
+
     render(){
         return  (
             <div className="container">
                 <button
-                    onClick={()=>this.transfer(this.props.accountID)}
+                    onClick={()=>this.create(this.props.name, this.props.height, this.props.weight, this.props.prescription, this.props.notes, this.props.initialaccount)}
                 >Create a file</button>
             </div>
         );
     }
 
 }
+
 export default FileSender;
